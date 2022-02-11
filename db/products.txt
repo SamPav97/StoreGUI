@@ -1,0 +1,6 @@
+{"id": 1, "name": "Laptop", "img": "laptop.jpg", "price": "2.56", "count": 5}
+{"id": 2, "name": "Laptop", "img": "laptop.jpg", "price": "4.56", "count": 1}
+{"id": 3, "name": "Phone", "img": "phone.jpg", "price": "10.56", "count": 3}
+{"id": 4, "name": "Phone", "img": "phone.jpg", "price": "12.56", "count": 4}
+{"id": 5, "name": "Headphones", "img": "headphones.jpg", "price": "14.56", "count": 6}
+{"id": 6, "name": "Headphones", "img": "headphones.jpg", "price": "15.56", "count": 2}
