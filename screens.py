@@ -1,6 +1,7 @@
 import tkinter as tk
 from StoreGUI.auth_service import register, login
-from StoreGUI.products_service import get_all_products
+from StoreGUI.products_service import get_all_products, buy_product
+from StoreGUI.user_service import purchase_product
 
 
 def clear_window(window):
@@ -8,10 +9,27 @@ def clear_window(window):
         child.destroy()
 
 
+def on_buy(product_id):
+    purchase_product(product_id)
+    buy_product(product_id)
+
+
+
 def render_products_screen(window):
     clear_window(window)
-
+    row = 0
+    column = 0
     products = get_all_products()
+    for product in products:
+        if column == 2:
+            row += 5
+            column = 0
+        tk.Label(window, text=product['name']).grid(row=row, column=column)
+        tk.Label(window, text=product['img']).grid(row=row+1, column=column)
+        tk.Label(window, text=f"Price: {product['price']}").grid(row=row+2, column=column)
+        tk.Label(window, text=f"Count: {product['count']}").grid(row=row+3, column=column)
+        tk.Button(window, text='Buy', command=lambda b=product['id']: on_buy(b)).grid(row=row+4, column=column)
+        column += 1
 
 
 def render_login_screen(window):
